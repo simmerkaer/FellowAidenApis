@@ -9,7 +9,7 @@ preview_urls = false
 
 # Lock the proxy to the demo's origins. The GitHub Pages site's Origin is just
 # scheme+host (https://simmerkaer.github.io) even though it's served under a
-# /FellowAidenApis/ subpath. localhost is included for local demo dev.
+# /fellow-aiden-ts/ subpath. localhost is included for local demo dev.
 [vars]
 ALLOWED_ORIGINS = "https://simmerkaer.github.io,http://localhost:5173"
 

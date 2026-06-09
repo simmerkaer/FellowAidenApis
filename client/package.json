@@ -7,11 +7,11 @@
   "author": "Steffen Immerkær (https://github.com/simmerkaer)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/simmerkaer/FellowAidenApis.git",
+    "url": "git+https://github.com/simmerkaer/fellow-aiden-ts.git",
     "directory": "client"
   },
-  "homepage": "https://github.com/simmerkaer/FellowAidenApis#readme",
-  "bugs": "https://github.com/simmerkaer/FellowAidenApis/issues",
+  "homepage": "https://github.com/simmerkaer/fellow-aiden-ts#readme",
+  "bugs": "https://github.com/simmerkaer/fellow-aiden-ts/issues",
   "keywords": [
     "fellow",
     "aiden",
