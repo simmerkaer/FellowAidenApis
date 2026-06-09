@@ -120,6 +120,22 @@ npm run build     # tsup → dist/ (ESM + CJS + .d.ts)
 
 See [`examples/basic-usage.ts`](./examples/basic-usage.ts) for a runnable example.
 
+## Releasing
+
+Releases are published to npm by CI via
+[trusted publishing](https://docs.npmjs.com/trusted-publishers) (OIDC, no
+token) when a `vX.Y.Z` tag is pushed. To cut one:
+
+```sh
+npm run release            # patch: 0.1.1 → 0.1.2
+npm run release -- minor   # 0.1.1 → 0.2.0
+npm run release -- major   # 0.1.1 → 1.0.0
+```
+
+This bumps the version, commits, tags `vX.Y.Z`, and pushes — which triggers
+[`release.yml`](../.github/workflows/release.yml) to build, test, and publish
+with provenance.
+
 ## License
 
 MIT. Inspired by the GPL-3.0 Python project `9b/fellow-aiden`; this is an
