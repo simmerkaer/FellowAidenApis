@@ -1,6 +1,6 @@
 {
   "name": "fellow-aiden",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "JavaScript/TypeScript client for the Fellow Aiden coffee brewer cloud API",
   "type": "module",
   "license": "MIT",
