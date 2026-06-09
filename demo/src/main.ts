@@ -81,7 +81,12 @@ form.addEventListener('submit', async (event) => {
 
     const [profiles, schedules] = await Promise.all([aiden.getProfiles(), aiden.getSchedules()]);
 
-    brewer.textContent = `${aiden.getDisplayName() ?? 'Aiden'} — ${aiden.getBrewerId()}`;
+    const name = document.createElement('span');
+    name.textContent = aiden.getDisplayName() ?? 'Aiden';
+    const id = document.createElement('span');
+    id.className = 'brewer-id';
+    id.textContent = aiden.getBrewerId() ?? '';
+    brewer.replaceChildren(name, id);
     renderList(
       profilesList,
       profiles.map((p) => `${p.title}  ·  ${p.id}`),

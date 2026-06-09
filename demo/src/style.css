@@ -50,14 +50,24 @@ header h1 {
 }
 
 .trust-row {
-  margin: 0.4rem 0;
+  margin: 0.55rem 0;
   display: flex;
   gap: 0.6rem;
-  align-items: baseline;
+  align-items: flex-start;
+}
+
+.trust-icon {
+  flex: none;
+  line-height: 1.5;
+}
+
+.trust-text {
+  flex: 1;
 }
 
 .trust-row strong {
   color: var(--text);
+  font-weight: 600;
 }
 
 .trust-row a,
@@ -174,6 +184,17 @@ button:disabled {
 
 h2 {
   margin-top: 0;
+  overflow-wrap: anywhere;
+}
+
+.brewer-id {
+  display: block;
+  margin-top: 0.25rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--muted);
+  word-break: break-all;
 }
 
 ul {
