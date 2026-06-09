@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fellow-aiden · live demo</title>
+    <meta
+      name="description"
+      content="Live, read-only demo of the fellow-aiden JavaScript client for the Fellow Aiden coffee brewer API."
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>☕ fellow-aiden</h1>
+        <p class="tagline">
+          A JavaScript/TypeScript client for the Fellow Aiden API. Sign in below
+          to see it pull your brewer's profiles &amp; schedules — live.
+        </p>
+      </header>
+
+      <section class="card trust">
+        <p class="trust-row"><span aria-hidden="true">🔒</span> This demo is <strong>read-only</strong> — it lists your profiles and schedules and changes nothing.</p>
+        <p class="trust-row"><span aria-hidden="true">🙈</span> Your credentials are sent to Fellow to log in and are <strong>never stored, logged, or shared</strong> by this page.</p>
+        <p class="trust-row"><span aria-hidden="true">🌐</span> Browsers can't call Fellow's API directly (no CORS), so requests pass through a thin relay. <a id="proxyInfoLink" href="#" >How it works ↓</a></p>
+      </section>
+
+      <form id="login" class="card">
+        <label>
+          Fellow email
+          <input id="email" type="email" autocomplete="username" placeholder="you@example.com" required />
+        </label>
+        <label>
+          Fellow password
+          <input id="password" type="password" autocomplete="current-password" required />
+        </label>
+
+        <details id="advanced" class="advanced">
+          <summary>Advanced</summary>
+          <label>
+            Relay (proxy) URL
+            <input id="proxyUrl" type="url" placeholder="https://fellow-aiden-proxy.example.workers.dev" />
+          </label>
+          <p class="hint">
+            Leave as-is to use the demo's relay. Point this at your own
+            <a href="https://github.com" target="_blank" rel="noreferrer">Cloudflare Worker</a>
+            if you'd rather not trust ours.
+          </p>
+        </details>
+
+        <button type="submit" id="submit">Connect &amp; load my brewer</button>
+        <p id="status" class="status"></p>
+      </form>
+
+      <section id="results" class="card hidden">
+        <h2 id="brewer"></h2>
+        <h3>Profiles</h3>
+        <ul id="profiles"></ul>
+        <h3>Schedules</h3>
+        <ul id="schedules"></ul>
+      </section>
+
+      <section class="card code">
+        <h3>The code running this page</h3>
+        <pre><code>import { FellowAiden } from 'fellow-aiden';
+
+const aiden = await FellowAiden.create({ email, password });
+
+aiden.getDisplayName();      // "Kitchen Aiden"
+await aiden.getProfiles();   // [{ id, title, ... }]
+await aiden.getSchedules();  // [{ id, ... }]</code></pre>
+      </section>
+
+      <section id="how" class="card how">
+        <h3>How it works</h3>
+        <p>
+          The Fellow API is a mobile-app backend with no CORS support, so a web
+          page can't call it directly. This demo runs the
+          <code>fellow-aiden</code> library in your browser and routes its
+          requests through a small Cloudflare Worker that forwards them to
+          Fellow and adds the missing CORS headers. The relay only passes
+          requests through — it stores nothing.
+        </p>
+        <pre class="flow">browser (this page) ─► Cloudflare Worker relay ─► Fellow API</pre>
+      </section>
+
+      <footer>
+        <a id="repoLink" href="https://github.com" target="_blank" rel="noreferrer">Source &amp; docs on GitHub</a>
+      </footer>
+    </main>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+name = "fellow-aiden-proxy"
+main = "src/index.ts"
+compatibility_date = "2024-11-01"
+
+# Lock the proxy to your demo site in production by uncommenting and setting
+# your GitHub Pages origin (no trailing slash). Leave unset to allow any origin.
+# [vars]
+# ALLOWED_ORIGINS = "https://<your-username>.github.io"
+
+# --- Per-IP rate limiting (Cloudflare Rate Limiting API) ---
+# Applied to every request: caps overall abuse of the relay.
+# period must be 10 or 60 (seconds).
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 60
+  period = 60
+
+# Stricter limit on login attempts only — deters credential stuffing, since
+# this proxy relays real Fellow logins.
+[[ratelimits]]
+name = "LOGIN_RATE_LIMITER"
+namespace_id = "1002"
+
+  [ratelimits.simple]
+  limit = 8
+  period = 60
