@@ -1,17 +1,19 @@
-# Fellow Aiden APIs
+# Fellow Aiden — TypeScript client
 
-Client libraries for the [Fellow Aiden](https://fellowproducts.com/) coffee
-brewer's cloud API, in multiple languages, plus a live browser demo. Inspired
-by the Python library [`9b/fellow-aiden`](https://github.com/9b/fellow-aiden).
+A TypeScript/JavaScript client for the [Fellow Aiden](https://fellowproducts.com/)
+coffee brewer's cloud API, plus a live browser demo. Inspired by the Python
+library [`9b/fellow-aiden`](https://github.com/9b/fellow-aiden).
+
+> Ports in other languages (.NET, Python) live in their own separate
+> repositories.
 
 ## Repository layout
 
-| Folder | What it is | Status |
-| --- | --- | --- |
-| [`javascript/`](./javascript) | TypeScript/JavaScript client library | ✅ Available |
-| [`proxy/`](./proxy) | Cloudflare Worker CORS proxy (for the browser demo) | ✅ Available |
-| [`demo/`](./demo) | Vite single-page demo that uses the library in the browser | ✅ Available |
-| `dotnet/` | .NET client library | 🛠 Planned |
+| Folder | What it is |
+| --- | --- |
+| [`javascript/`](./javascript) | The client library (published to npm as `fellow-aiden`) |
+| [`proxy/`](./proxy) | Cloudflare Worker CORS proxy (for the browser demo) |
+| [`demo/`](./demo) | Vite single-page demo that uses the library in the browser |
 
 ## Try it locally (no hosting needed)
 
