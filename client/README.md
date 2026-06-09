@@ -16,6 +16,10 @@ brewer's cloud API. A faithful port of the Python library
 | --- | --- | --- |
 | **TypeScript / JavaScript** (this package) | [`fellow-aiden`](https://www.npmjs.com/package/fellow-aiden) (npm) | [fellow-aiden-ts](https://github.com/simmerkaer/fellow-aiden-ts) |
 | .NET | [`FellowAiden`](https://www.nuget.org/packages/FellowAiden) (NuGet) | [fellow-aiden-dotnet](https://github.com/simmerkaer/fellow-aiden-dotnet) |
+| Python (original) † | [`fellow-aiden`](https://pypi.org/project/fellow-aiden/) (PyPI) | [9b/fellow-aiden](https://github.com/9b/fellow-aiden) |
+
+† The original library that inspired these ports. It may be unmaintained and might not currently work against the live API.
+
 ## Install
 
 ```sh
