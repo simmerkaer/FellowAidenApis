@@ -9,8 +9,15 @@ A TypeScript/JavaScript client for the [Fellow Aiden](https://fellowproducts.com
 coffee brewer's cloud API, plus a live browser demo. Inspired by the Python
 library [`9b/fellow-aiden`](https://github.com/9b/fellow-aiden).
 
-> Ports in other languages (.NET, Python) live in their own separate
-> repositories.
+## Other implementations
+
+The same client in other languages — same API, idiomatic to each platform:
+
+| Language | Package | Repository |
+| --- | --- | --- |
+| **TypeScript / JavaScript** (this repo) | [`fellow-aiden`](https://www.npmjs.com/package/fellow-aiden) (npm) | [fellow-aiden-ts](https://github.com/simmerkaer/fellow-aiden-ts) |
+| .NET | [`FellowAiden`](https://www.nuget.org/packages/FellowAiden) (NuGet) | [fellow-aiden-dotnet](https://github.com/simmerkaer/fellow-aiden-dotnet) |
+| Python | _planned_ | — |
 
 ## Repository layout
 
