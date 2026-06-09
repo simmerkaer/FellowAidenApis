@@ -2,10 +2,16 @@ name = "fellow-aiden-proxy"
 main = "src/index.ts"
 compatibility_date = "2024-11-01"
 
-# Lock the proxy to your demo site in production by uncommenting and setting
-# your GitHub Pages origin (no trailing slash). Leave unset to allow any origin.
-# [vars]
-# ALLOWED_ORIGINS = "https://<your-username>.github.io"
+# Serve on the workers.dev subdomain, but disable per-version preview URLs to
+# shrink the surface of this credential relay.
+workers_dev = true
+preview_urls = false
+
+# Lock the proxy to the demo's origins. The GitHub Pages site's Origin is just
+# scheme+host (https://simmerkaer.github.io) even though it's served under a
+# /FellowAidenApis/ subpath. localhost is included for local demo dev.
+[vars]
+ALLOWED_ORIGINS = "https://simmerkaer.github.io,http://localhost:5173"
 
 # --- Per-IP rate limiting (Cloudflare Rate Limiting API) ---
 # Applied to every request: caps overall abuse of the relay.
